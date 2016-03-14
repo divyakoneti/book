@@ -1,0 +1,37 @@
+class StoresController < ApplicationController
+  def new
+  	@custmer=Custmer.new   #here create object for Custmer model
+  end
+  
+  def create 
+   @custmer=Custmer.new(add_params) # create used for add the records to the database	
+     if @custmer.save
+     	redirect_to tickets_login_path, :notice => "regeisterd sucessfull"
+     else
+        redirect_to tickets_new_path, :notice =>  "registration failure"	
+     end
+   end 
+   def login
+  	@custmer=Custmer.new
+  end
+   def check
+    @verify=Custmer.new(data_params)
+    @count=0
+     @verify.each do |object|
+       if (@verify.email==object.email && @verify.password==object.password)
+        if object.role== "admin"
+          redirect_to tickets_store_path,:notice => "admin"
+          session[:username]=object.name
+        else
+          redirect_to tickets_booking_path(custmer_id:object.id)
+          session[:username]=object.name
+          session[:user_id]=object.id
+        end
+      end
+    end
+        
+
+
+end
+end
+
