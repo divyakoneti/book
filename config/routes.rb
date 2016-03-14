@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   get 'basics/index'
-
+  get 'stores/theaters'
   get 'stores/new'
   get 'stores/login'
   get 'stores/create'
   get 'stores/check'
   post 'stores/check'
+  get 'stores/index'
+  get 'stores/store'
+  get 'stores/theater_store'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
