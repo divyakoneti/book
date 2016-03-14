@@ -11,6 +11,8 @@ class StoresController < ApplicationController
         redirect_to stores_new_path, :notice =>  "registration failure"	
      end
    end 
+   def index
+   end
    def login
   	@custmer=Custmer.new
   end
@@ -33,6 +35,12 @@ class StoresController < ApplicationController
 
 
 end
+private
+def add_params
+  params.require(:custmer).permit(:name,:email,:password,:mobile)
 end
-
+def data_params
+  params.require(:custmer).permit(:email,:password)
+ end
+ end 
 
