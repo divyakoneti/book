@@ -19,10 +19,11 @@ class StoresController < ApplicationController
    def check
     @verify=Custmer.new(data_params)
     @count=0
-     @verify.each do |object|
+     @obj=Custmer.all
+     @obj.each do |object|
        if (@verify.email==object.email && @verify.password==object.password)
         if object.role== "admin"
-          redirect_to stores_store_path,:notice => "admin"
+         # redirect_to stores_store_path,:notice => "admin"
           session[:username]=object.name
         else
           redirect_to stores_booking_path(custmer_id:object.id)
