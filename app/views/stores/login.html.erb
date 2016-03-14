@@ -1,7 +1,7 @@
 <h1> login_form</h1>
-<%= form_for (@custmer,url:{:action=>"check"}) do |f| %>
+<%= form_for @custmer,url:{:action=>'check'} do |f| %>
 <%= f.label :Email %>
-<%= f.email_feild :email %>
+<%= f.email_field :email %>
 <p>
 <%= f.label :password %>
 <%= f.password_field :password %>
