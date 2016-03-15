@@ -1,0 +1,13 @@
+<h1 align="center">Movies_registration</h1><hr>
+<center><b>Registration</b>
+<%= form_for(@movie,url:{:action=>"movie_store"}) do |f| %>
+<p>
+<%= f.label :moviename %>
+<%= f.text_field :movie_name %>
+</p>
+<p>
+<%= f.label :movie_director%>
+<%= f.text_field :movie_director %>
+</p>
+<%= f.submit "submit" %></center>
+<% end %>

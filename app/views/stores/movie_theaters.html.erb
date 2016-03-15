@@ -1,0 +1,100 @@
+<fieldset>
+	<h1 align="center"> Theater_Information</h1><hr>
+	<table>
+	  <tr>
+	   <td>
+	    <h1>Theaer_Id </h1>
+	   </td>
+	   <td>
+	    <h3> Theater_Name</h3>
+	   </td>
+	   <td>
+	     <h1> Theater_owner_Name </h1>
+	   </td>
+	   <td> 
+	     <h1> No_Of_Seates </h1>
+	   </td>
+	  </tr>
+<% @theater.each do |theater| %>
+<tr>
+ <td>
+  <h1>
+   <%= theater.id%>
+  </h1>
+ </td>
+ <td>
+   <h1>
+    <%= theater.t_name %>
+   </h1>
+ </td>
+ <td>
+    <h1>
+     <%= theater.t_owner %>
+    </h1>
+ </td>
+ <td>
+    <h1>
+      <%= theater.t_no_of_seats %>
+    </h1>
+ </td>
+ </tr>
+ <% end %>
+ </table>
+ <h1> Movie_Details </h1>
+ <table>
+   <tr>
+     <td>
+      <h1>Movie_Id </h1>
+     </td>
+     <td>
+      <h1>Movie_Name </h1>
+     </td>
+     <td>
+      <h1>Movie_director </h1>
+     </td>
+    </tr>
+   <% @movie.each do |movie| %>
+   <tr>
+    <td>
+     <h1>
+       <%=movie.id %>
+     </h1>
+    </td>
+    <td>
+      <h1>
+       <%= movie.movie_name %>
+      </h1>
+    </td>
+    <td>
+       <h1>
+        <%= movie.movie_director %>
+       </h1>
+    </td>
+  </tr>
+<% end %>
+ 
+<p> Registratoin</p>
+<h1> Theaters Registration </h1>
+<p>Registration</p>
+<%= form_for(@movie_theater,url:{:action=>"movie_theater_store"}) do |f| %>
+<p>
+<%= f.label :Teater_Id %>
+<%= f.text_field :theater_id %>
+</p>
+<p>
+<%= f.label :Movie_Id %>
+<%= f.text_field :movie_id %>
+</p>
+<%= f.submit "sumbmit"  %>
+
+</table>
+
+<% end %>
+</fieldset>
+           
+
+
+
+
+
+

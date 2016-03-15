@@ -1,0 +1,19 @@
+<h1 align="center">Theater_Registration</h1><hr>
+<center><b>Registration</b>
+<%= form_for(@theater,url:{:action=>"theater_store"}) do |f| %> 
+<p>
+<%= f.label :theater_name %>
+<%= f.text_field :t_name %>
+</p>
+<p>
+<%= f.label :theater_owner %>
+<%= f.text_field :t_owner %>
+</p>
+<p>
+<%= f.label :seats_count %>
+<%= f.text_field :t_no_of_seats %>
+</p>
+<%= f.submit "submit"%></center>
+<% end %>
+
+
