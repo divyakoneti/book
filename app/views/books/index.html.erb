@@ -1,0 +1,30 @@
+
+ <div class="container">
+ <h1>Listing Books</h1>
+<div class="table-responsive">
+<table class="table">
+  <tr class="success">
+    <th>name</th>
+    <th>pages</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @books.each do |book| %>
+  <tr class="info">
+    <td><%= book.name %></td>
+    <td><%= book.pages %></td>
+    <td><%= link_to "Show", book %></td>
+    <td><%= link_to "Edit", edit_book_path(book) %></td>
+    <td><%= link_to "Remove", book, method: :delete, data: { confirm: "Are you sure?" } %></td>
+  </tr>
+  
+<% end %>
+</table>
+ </div>
+ </div>
+
+
+ 
+<center><%= link_to "New book", new_book_path %></center>

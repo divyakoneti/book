@@ -1,0 +1,9 @@
+<%= link_to "create new user",new_form_path %>
+<% @forms.each do |form| %>
+	firstname:<%= form.first_name %>
+	lastname:<%= form.last_name %><br>
+	gender : <%= form.gender %><br>
+	address: <%= new_form_path.address %><br>
+	country : <%= form.country %><br>
+	<%= link_to "delete user" ,form_path(user),:data => {:confirm => "are you sure"}, :method => :delete %>
+	<% end %>
